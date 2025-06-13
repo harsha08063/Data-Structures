@@ -1,4 +1,4 @@
-def fractionalknapsack(self, val, wt, capacity):
+def fractionalknapsack(self, val, wt, capacity):// val and wt are arrays
         #code here
         l=[]
         l1=[]
