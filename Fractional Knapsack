@@ -1,0 +1,23 @@
+def fractionalknapsack(self, val, wt, capacity):
+        #code here
+        l=[]
+        l1=[]
+        for i in range(len(val)):
+            l.append([val[i],wt[i]])
+            a=val[i]/wt[i]
+            l1.append(a)
+        combined=zip(l1,l)
+        sorted_combined=sorted(combined,reverse=True)
+        l1,l=zip(*sorted_combined)
+        l1=list(l1)
+        l=list(l)
+        total=0
+        for i in range(len(l)):
+            if l[i][1]<=capacity:
+                capacity=capacity-l[i][1]
+                total=total+l[i][0]
+            elif l[i][1]>capacity:
+                a=(capacity/l[i][1])*(l[i][0])
+                total=total+a
+                break
+        return total
